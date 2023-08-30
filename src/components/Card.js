@@ -53,6 +53,7 @@ const Wrapper = styled.article`
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   position: relative;
+
   &::before {
     content: 'user';
     position: absolute;
@@ -68,12 +69,14 @@ const Wrapper = styled.article`
     letter-spacing: var(--spacing);
     font-size: 1rem;
   }
+
   header {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     column-gap: 1rem;
     margin-bottom: 1rem;
+
     img {
       width: 75px;
       height: 75px;
