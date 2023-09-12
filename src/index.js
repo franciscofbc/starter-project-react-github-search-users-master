@@ -9,9 +9,17 @@ import GithubProvider from './context/context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GithubProvider>
-      <App />
-    </GithubProvider>
+    <Auth0Provider
+      domain="dev-uko7lfawkoprdyp6.us.auth0.com"
+      clientId="7BSI7uAVknwJmqLKFmQrmUHS4XGc8D8r"
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+      }}
+    >
+      <GithubProvider>
+        <App />
+      </GithubProvider>
+    </Auth0Provider>
   </React.StrictMode>
 );
 
