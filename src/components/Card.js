@@ -21,26 +21,26 @@ const Card = () => {
       <header>
         <img src={avatar_url} alt={name} />
         <div>
-          <h4>{name}</h4>
+          <h4>{name || 'default value:name'}</h4>
           <p>@{twitter_username || 'default value'}</p>
         </div>
         <a href={html_url} target="_blank" rel="noopener noreferrer">
           follow
         </a>
       </header>
-      <p className="bio">{bio}</p>
+      <p className="bio">{bio || 'default value'}</p>
       <div className="links">
         <p>
           <MdBusiness />
-          {company}
+          {company || 'default value'}
         </p>
         <p>
           <MdLocationOn />
-          {location}
+          {location || 'default value'}
         </p>
         <a href={`https://${blog}`} target="_blank" rel="noopener noreferrer">
           <MdLink />
-          {blog}
+          {blog || 'default value'}
         </a>
       </div>
     </Wrapper>

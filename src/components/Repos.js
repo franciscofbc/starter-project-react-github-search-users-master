@@ -51,7 +51,7 @@ const Repos = () => {
     .map((item) => {
       return { label: item.label, value: item.stars };
     })
-    .slice(0.5);
+    .slice(0, 5);
 
   // stars and forks
   let { stars, forks } = repos.reduce(
