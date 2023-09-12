@@ -17,7 +17,7 @@ import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
-const Pie3d = ({ data }) => {
+const Pie3D = ({ data }) => {
   const chartConfigs = {
     type: 'pie2d', // The chart type
     width: '100%', // Width of the chart
@@ -33,7 +33,7 @@ const Pie3d = ({ data }) => {
         theme: 'fusion',
 
         // decimals: 0,
-        // pieRadius: '45%',
+        pieRadius: '45%',
         // paletteColors: '#f0db4f',
       },
       // Chart Data
@@ -43,4 +43,4 @@ const Pie3d = ({ data }) => {
   return <ReactFC {...chartConfigs} />;
 };
 
-export default Pie3d;
+export default Pie3D;
