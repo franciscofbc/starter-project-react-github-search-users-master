@@ -6,18 +6,29 @@ const Navbar = () => {
   const { loginWithRedirect, logout, user, isAuthenticated, isLoading } =
     useAuth0();
 
-  console.log({ user, isAuthenticated, isLoading });
+  if (isLoading) {
+    return <div className="section-center">Loading ...</div>;
+  }
 
   return (
     <Wrapper>
-      <button
-        onClick={() =>
-          logout({ logoutParams: { returnTo: window.location.origin } })
-        }
-      >
-        Log Out
-      </button>
-      <button onClick={() => loginWithRedirect()}>Log In</button>
+      {isAuthenticated ? (
+        <>
+          <img src={user.picture} alt={user.name} />
+          <h4>
+            welcome, <strong>{user.name.toUpperCase()}</strong>
+          </h4>
+          <button
+            onClick={() =>
+              logout({ logoutParams: { returnTo: window.location.origin } })
+            }
+          >
+            Log Out
+          </button>
+        </>
+      ) : (
+        <button onClick={() => loginWithRedirect()}>Log In</button>
+      )}
     </Wrapper>
   );
 };
