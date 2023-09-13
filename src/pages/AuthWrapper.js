@@ -2,8 +2,28 @@ import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import loadingGif from '../images/preloader.gif';
 import styled from 'styled-components';
-function AuthWrapper() {
-  return <h2>authwrapper component</h2>;
+
+function AuthWrapper(props) {
+  const { isLoading, error } = useAuth0();
+  console.log(props);
+
+  if (isLoading) {
+    return (
+      <Wrapper>
+        <img src={loadingGif} alt="loading" />;
+      </Wrapper>
+    );
+  }
+
+  if (error) {
+    return (
+      <Wrapper>
+        <div>Oops... {error.message}</div>;
+      </Wrapper>
+    );
+  }
+
+  return <h1>teste</h1>;
 }
 
 const Wrapper = styled.section`
